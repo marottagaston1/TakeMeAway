@@ -5,6 +5,7 @@ import * as THREE from 'three';
 import {RoomEnvironment} from 'three/examples/jsm/environments/RoomEnvironment.js';
 import {useCurrentFrame, useVideoConfig} from 'remotion';
 import {Bacon, Board, BottomBun, Cheese, Egg, Onions, Patty, Sauce, TopBun} from './Layers';
+import {useModels} from './GlbLayer';
 import {camAt, FOV, groupRotY, LAYERS, layerRotY, layerY, type LayerKey} from './rig';
 
 const Rig: React.FC = () => {
@@ -48,6 +49,7 @@ const parts: Record<LayerKey, React.ReactNode> = {
 export const Scene3D: React.FC = () => {
   const frame = useCurrentFrame();
   const {width, height} = useVideoConfig();
+  const models = useModels();
   return (
     <ThreeCanvas
       width={width}
@@ -78,11 +80,14 @@ export const Scene3D: React.FC = () => {
 
       <Board />
       <group rotation={[0, groupRotY(frame), 0]}>
-        {LAYERS.map((l) => (
-          <group key={l.key} position={[0, layerY(frame, l), 0]} rotation={[0, layerRotY(frame, l), 0]}>
-            {parts[l.key]}
-          </group>
-        ))}
+        {LAYERS.map((l) => {
+          const m = models[l.key];
+          return (
+            <group key={l.key} position={[0, layerY(frame, l), 0]} rotation={[0, layerRotY(frame, l), 0]}>
+              {m ? <primitive object={m} /> : parts[l.key]}
+            </group>
+          );
+        })}
       </group>
     </ThreeCanvas>
   );
