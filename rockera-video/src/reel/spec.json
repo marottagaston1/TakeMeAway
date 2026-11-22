@@ -143,5 +143,122 @@
     "tres"
    ]
   }
+ ],
+ "sfx": [
+  {
+   "group": "Cortes",
+   "scene": "Gancho 2",
+   "offset": -2,
+   "file": "sfx/whoosh_n.wav",
+   "volume": 1.0,
+   "seconds": 0.75
+  },
+  {
+   "group": "Cortes",
+   "scene": "1 Medallón",
+   "offset": -2,
+   "file": "sfx/whoosh_n.wav",
+   "volume": 1.0,
+   "seconds": 0.75
+  },
+  {
+   "group": "Cortes",
+   "scene": "2 Cheddar",
+   "offset": -2,
+   "file": "sfx/whoosh_n.wav",
+   "volume": 1.0,
+   "seconds": 0.75
+  },
+  {
+   "group": "Cortes",
+   "scene": "3 Panceta",
+   "offset": -2,
+   "file": "sfx/whoosh_n.wav",
+   "volume": 1.0,
+   "seconds": 0.75
+  },
+  {
+   "group": "Cortes",
+   "scene": "4 Cebolla caramelizada",
+   "offset": -2,
+   "file": "sfx/whoosh_n.wav",
+   "volume": 1.0,
+   "seconds": 0.75
+  },
+  {
+   "group": "Cortes",
+   "scene": "5 Huevo frito",
+   "offset": -2,
+   "file": "sfx/whoosh_n.wav",
+   "volume": 1.0,
+   "seconds": 0.75
+  },
+  {
+   "group": "Cortes",
+   "scene": "6 Salsa especial",
+   "offset": -2,
+   "file": "sfx/whoosh_n.wav",
+   "volume": 1.0,
+   "seconds": 0.75
+  },
+  {
+   "group": "Cortes",
+   "scene": "7 Pan de papa",
+   "offset": -2,
+   "file": "sfx/whoosh_n.wav",
+   "volume": 1.0,
+   "seconds": 0.75
+  },
+  {
+   "group": "Impacto",
+   "scene": "Cierre",
+   "offset": 8,
+   "file": "sfx/boom_n.mp3",
+   "volume": 0.4,
+   "seconds": 2.2
+  },
+  {
+   "group": "Guitarra",
+   "scene": "Cierre",
+   "offset": 8,
+   "file": "sfx/guitar_n.mp3",
+   "volume": 0.3,
+   "seconds": 1.4
+  },
+  {
+   "group": "Moto",
+   "scene": "Llamado a la acción",
+   "offset": 0,
+   "file": "sfx/rev_n.mp3",
+   "volume": 0.6,
+   "seconds": 1.8
+  },
+  {
+   "group": "Pops",
+   "scene": "Llamado a la acción",
+   "cue": 0,
+   "file": "sfx/pop.wav",
+   "volume": 1.0,
+   "seconds": 0.2,
+   "rate": 1.0
+  },
+  {
+   "group": "Pops",
+   "scene": "Llamado a la acción",
+   "cue": 1,
+   "file": "sfx/pop.wav",
+   "volume": 1.0,
+   "seconds": 0.2,
+   "rate": 1.12
+  },
+  {
+   "group": "Pops",
+   "scene": "Llamado a la acción",
+   "cue": 2,
+   "file": "sfx/pop.wav",
+   "volume": 1.0,
+   "seconds": 0.2,
+   "rate": 1.26
+  }
  ]
 }

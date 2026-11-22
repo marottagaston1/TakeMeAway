@@ -1,7 +1,7 @@
 import React from 'react';
 import {Audio} from '@remotion/media';
 import type {Caption} from '@remotion/captions';
-import {AbsoluteFill, Img, Sequence, staticFile, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Img, Sequence, staticFile, Track, useVideoConfig} from 'remotion';
 import {Ingredient} from '../Ingredient';
 import {KenBurns} from '../KenBurns';
 import {Captions} from './Captions';
@@ -82,6 +82,14 @@ const renderScene = (s: Scene, cues: number[]) => {
 export const Reel: React.FC = () => {
   const {fps, durationInFrames} = useVideoConfig();
   const plan = buildPlan(fps);
+  // Efectos de sonido: cada uno se ancla al inicio de una escena (o a uno de sus cues).
+  const sfxItems = spec.sfx.map((it) => {
+    const si = spec.scenes.findIndex((sc) => sc.name === it.scene);
+    if (si < 0) throw new Error(`No encuentro la escena "${it.scene}" para un efecto de sonido`);
+    const at = plan[si].start + (it.cue != null ? plan[si].cues[it.cue] : (it.offset ?? 0));
+    return {...it, from: Math.max(0, at), frames: Math.round(it.seconds * fps)};
+  });
+  const sfxGroups = Array.from(new Set(sfxItems.map((it) => it.group)));
   const ctaIdx = spec.scenes.findIndex((sc) => sc.kind === 'cta');
   const ctaStart = ctaIdx >= 0 ? plan[ctaIdx].start : durationInFrames;
 
@@ -103,6 +111,23 @@ export const Reel: React.FC = () => {
           background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 34%)',
         }}
       />
+      {sfxGroups.map((g) => (
+        <Track key={g} name={`Efectos: ${g}`}>
+          {sfxItems
+            .filter((it) => it.group === g)
+            .map((it, k) => (
+              <Audio
+                key={k}
+                name={`${g} ${k + 1}`}
+                src={staticFile(it.file)}
+                from={it.from}
+                durationInFrames={it.frames}
+                volume={it.volume}
+                playbackRate={it.rate ?? 1}
+              />
+            ))}
+        </Track>
+      ))}
       <Sequence name="Marca de agua" from={0} durationInFrames={Math.max(1, ctaStart)} layout="none">
         <Img
           name="Logo Motorock (marca de agua)"

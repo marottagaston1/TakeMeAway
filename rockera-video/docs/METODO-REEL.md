@@ -19,6 +19,14 @@ guion.txt ──► voz (ElevenLabs) ──► tiempos por palabra ──► spe
 5. **Composición**: `PlatoEspecial` en `src/Root.tsx`. La duración (en frames) = narración + cola, a mano.
 6. **Vista previa**: `npm run dev`. **Render**: `npx remotion render PlatoEspecial out/video.mp4`.
 
+## Efectos de sonido
+En `spec.json`, la lista `sfx` ancla cada efecto al inicio de una escena (`offset` en frames, puede ser negativo)
+o a uno de sus `cue` (por ejemplo, las palabras "uno", "dos", "tres"). Cada uno lleva `file`, `volume`, `seconds`
+y, si hace falta, `rate` (velocidad). Se agrupan en pistas por `group`.
+- Los efectos se generan con ElevenLabs (modelo de efectos, ~50 créditos cada uno), un sonido por pedido, y se
+  nivelan con ffmpeg respecto de la voz (~-17,6 LUFS). Los efectos van entre 6 y 12 dB por debajo de la voz.
+- La música se agrega en Instagram, sobre el video ya exportado.
+
 ## Ojo
 - Los subtítulos queman el texto del guion; el audio solo aporta el tiempo.
 - Fotos verticales 9:16; las reales de comida venden más que cualquier ilustración.
