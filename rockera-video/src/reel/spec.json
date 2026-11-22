@@ -1,0 +1,288 @@
+{
+ "voice": "voice/motorock_v2.mp3",
+ "tailSeconds": 2,
+ "scenes": [
+  {
+   "name": "Gancho",
+   "anchor": "Una,",
+   "kind": "hook",
+   "photo": "fotos/foto01.jpg",
+   "cues": [
+    "Una,",
+    "dos",
+    "tres"
+   ]
+  },
+  {
+   "name": "Gancho 2",
+   "anchor": "Pero",
+   "kind": "photo",
+   "photo": "fotos/foto06.jpg",
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoomFrom": 1.0,
+   "zoomTo": 1.25,
+   "brightness": 0.85
+  },
+  {
+   "name": "1 Medallón",
+   "anchor": "Medallón",
+   "kind": "ingredient",
+   "photo": "fotos/foto05.jpg",
+   "fx": 0.5,
+   "fy": 0.64,
+   "zoom": 1.9,
+   "number": "01 / 07",
+   "line1": "Medallón",
+   "line2": "de carne",
+   "size": 190
+  },
+  {
+   "name": "2 Cheddar",
+   "anchor": "Cheddar.",
+   "kind": "ingredient",
+   "photo": "fotos/foto01.jpg",
+   "fx": 0.55,
+   "fy": 0.56,
+   "zoom": 1.9,
+   "number": "02 / 07",
+   "line1": "Cheddar",
+   "line2": "",
+   "size": 230
+  },
+  {
+   "name": "3 Panceta",
+   "anchor": "Panceta.",
+   "kind": "ingredient",
+   "photo": "fotos/foto06.jpg",
+   "fx": 0.27,
+   "fy": 0.72,
+   "zoom": 2.1,
+   "number": "03 / 07",
+   "line1": "Panceta",
+   "line2": "",
+   "size": 230
+  },
+  {
+   "name": "4 Cebolla caramelizada",
+   "anchor": "Cebolla",
+   "kind": "ingredient",
+   "photo": "fotos/foto04.jpg",
+   "fx": 0.66,
+   "fy": 0.69,
+   "zoom": 2.3,
+   "number": "04 / 07",
+   "line1": "Cebolla",
+   "line2": "caramelizada",
+   "size": 150
+  },
+  {
+   "name": "5 Huevo frito",
+   "anchor": "Huevo",
+   "kind": "ingredient",
+   "photo": "fotos/foto05.jpg",
+   "fx": 0.6,
+   "fy": 0.44,
+   "zoom": 1.8,
+   "number": "05 / 07",
+   "line1": "Huevo",
+   "line2": "frito",
+   "size": 200
+  },
+  {
+   "name": "6 Salsa especial",
+   "anchor": "Salsa",
+   "kind": "ingredient",
+   "photo": "fotos/foto02.jpg",
+   "fx": 0.3,
+   "fy": 0.27,
+   "zoom": 2.2,
+   "number": "06 / 07",
+   "line1": "Salsa",
+   "line2": "especial",
+   "size": 200
+  },
+  {
+   "name": "7 Pan de papa",
+   "anchor": "Y",
+   "kind": "ingredient",
+   "photo": "fotos/foto01.jpg",
+   "fx": 0.55,
+   "fy": 0.34,
+   "zoom": 1.7,
+   "number": "07 / 07",
+   "line1": "Pan de papa",
+   "line2": "con parmesano",
+   "size": 125
+  },
+  {
+   "name": "Resumen",
+   "anchor": "Siete",
+   "kind": "photo",
+   "photo": "fotos/foto09.jpg",
+   "fx": 0.5,
+   "fy": 0.55,
+   "zoomFrom": 1.5,
+   "zoomTo": 1.75,
+   "brightness": 0.85
+  },
+  {
+   "name": "Cierre",
+   "anchor": "Hamburguesa",
+   "kind": "end",
+   "photo": "fotos/foto06.jpg"
+  },
+  {
+   "name": "Llamado a la acción",
+   "anchor": "Encontrala",
+   "kind": "cta",
+   "photo": "fotos/foto03.jpg",
+   "cues": [
+    "Pedila"
+   ],
+   "whatsapp": "11 6564-8247"
+  }
+ ],
+ "sfx": [
+  {
+   "group": "Pops",
+   "scene": "Gancho",
+   "cue": 0,
+   "file": "sfx/pop_n.mp3",
+   "volume": 1.0,
+   "seconds": 0.48,
+   "rate": 1.0
+  },
+  {
+   "group": "Pops",
+   "scene": "Gancho",
+   "cue": 1,
+   "file": "sfx/pop_n.mp3",
+   "volume": 1.0,
+   "seconds": 0.48,
+   "rate": 1.12
+  },
+  {
+   "group": "Pops",
+   "scene": "Gancho",
+   "cue": 2,
+   "file": "sfx/pop_n.mp3",
+   "volume": 1.0,
+   "seconds": 0.48,
+   "rate": 1.26
+  },
+  {
+   "group": "Golpe inicial",
+   "scene": "Gancho",
+   "offset": 0,
+   "file": "sfx/boom_n.mp3",
+   "volume": 0.3,
+   "seconds": 1.6
+  },
+  {
+   "group": "Cortes",
+   "scene": "Gancho 2",
+   "offset": -2,
+   "file": "sfx/whoosh_n.wav",
+   "volume": 1.0,
+   "seconds": 0.75
+  },
+  {
+   "group": "Cortes",
+   "scene": "1 Medallón",
+   "offset": -2,
+   "file": "sfx/whoosh_n.wav",
+   "volume": 1.0,
+   "seconds": 0.75
+  },
+  {
+   "group": "Cortes",
+   "scene": "2 Cheddar",
+   "offset": -2,
+   "file": "sfx/whoosh_n.wav",
+   "volume": 1.0,
+   "seconds": 0.75
+  },
+  {
+   "group": "Cortes",
+   "scene": "3 Panceta",
+   "offset": -2,
+   "file": "sfx/whoosh_n.wav",
+   "volume": 1.0,
+   "seconds": 0.75
+  },
+  {
+   "group": "Cortes",
+   "scene": "4 Cebolla caramelizada",
+   "offset": -2,
+   "file": "sfx/whoosh_n.wav",
+   "volume": 1.0,
+   "seconds": 0.75
+  },
+  {
+   "group": "Cortes",
+   "scene": "5 Huevo frito",
+   "offset": -2,
+   "file": "sfx/whoosh_n.wav",
+   "volume": 1.0,
+   "seconds": 0.75
+  },
+  {
+   "group": "Cortes",
+   "scene": "6 Salsa especial",
+   "offset": -2,
+   "file": "sfx/whoosh_n.wav",
+   "volume": 1.0,
+   "seconds": 0.75
+  },
+  {
+   "group": "Cortes",
+   "scene": "7 Pan de papa",
+   "offset": -2,
+   "file": "sfx/whoosh_n.wav",
+   "volume": 1.0,
+   "seconds": 0.75
+  },
+  {
+   "group": "Cortes",
+   "scene": "Resumen",
+   "offset": -2,
+   "file": "sfx/whoosh_n.wav",
+   "volume": 1.0,
+   "seconds": 0.75
+  },
+  {
+   "group": "Impacto",
+   "scene": "Cierre",
+   "offset": 8,
+   "file": "sfx/boom_n.mp3",
+   "volume": 0.4,
+   "seconds": 2.2
+  },
+  {
+   "group": "Guitarra",
+   "scene": "Cierre",
+   "offset": 8,
+   "file": "sfx/guitar_n.mp3",
+   "volume": 0.3,
+   "seconds": 1.4
+  },
+  {
+   "group": "Moto",
+   "scene": "Llamado a la acción",
+   "offset": 0,
+   "file": "sfx/rev_n.mp3",
+   "volume": 0.6,
+   "seconds": 1.8
+  },
+  {
+   "group": "Pop WhatsApp",
+   "scene": "Llamado a la acción",
+   "cue": 0,
+   "file": "sfx/pop_n.mp3",
+   "volume": 1.0,
+   "seconds": 0.48,
+   "rate": 1.5
+  }
+ ]
+}

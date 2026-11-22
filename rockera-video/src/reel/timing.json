@@ -1,0 +1,271 @@
+{
+ "durationMs": 22674,
+ "source": "local-silence-alignment",
+ "words": [
+  {
+   "text": "Una,",
+   "startMs": 0,
+   "endMs": 471
+  },
+  {
+   "text": "dos",
+   "startMs": 578,
+   "endMs": 818
+  },
+  {
+   "text": "o",
+   "startMs": 818,
+   "endMs": 1058
+  },
+  {
+   "text": "tres",
+   "startMs": 1215,
+   "endMs": 1372
+  },
+  {
+   "text": "medallones.",
+   "startMs": 1478,
+   "endMs": 2183
+  },
+  {
+   "text": "Vos",
+   "startMs": 2183,
+   "endMs": 2359
+  },
+  {
+   "text": "elegís.",
+   "startMs": 2525,
+   "endMs": 2982
+  },
+  {
+   "text": "Pero",
+   "startMs": 2982,
+   "endMs": 3286
+  },
+  {
+   "text": "mirá",
+   "startMs": 3608,
+   "endMs": 3868
+  },
+  {
+   "text": "todo",
+   "startMs": 3868,
+   "endMs": 4128
+  },
+  {
+   "text": "lo",
+   "startMs": 4338,
+   "endMs": 4509
+  },
+  {
+   "text": "que",
+   "startMs": 4509,
+   "endMs": 4680
+  },
+  {
+   "text": "lleva",
+   "startMs": 4680,
+   "endMs": 5021
+  },
+  {
+   "text": "la",
+   "startMs": 5021,
+   "endMs": 5192
+  },
+  {
+   "text": "Rockera.",
+   "startMs": 5192,
+   "endMs": 5704
+  },
+  {
+   "text": "Medallón",
+   "startMs": 6015,
+   "endMs": 6484
+  },
+  {
+   "text": "de",
+   "startMs": 6484,
+   "endMs": 6640
+  },
+  {
+   "text": "carne.",
+   "startMs": 6640,
+   "endMs": 6952
+  },
+  {
+   "text": "Cheddar.",
+   "startMs": 7285,
+   "endMs": 7696
+  },
+  {
+   "text": "Panceta.",
+   "startMs": 7997,
+   "endMs": 8651
+  },
+  {
+   "text": "Cebolla",
+   "startMs": 8857,
+   "endMs": 9299
+  },
+  {
+   "text": "caramelizada.",
+   "startMs": 9299,
+   "endMs": 10182
+  },
+  {
+   "text": "Huevo",
+   "startMs": 10304,
+   "endMs": 10604
+  },
+  {
+   "text": "frito.",
+   "startMs": 10604,
+   "endMs": 10904
+  },
+  {
+   "text": "Salsa",
+   "startMs": 11012,
+   "endMs": 11368
+  },
+  {
+   "text": "especial.",
+   "startMs": 11368,
+   "endMs": 11900
+  },
+  {
+   "text": "Y",
+   "startMs": 11900,
+   "endMs": 12078
+  },
+  {
+   "text": "un",
+   "startMs": 12078,
+   "endMs": 12255
+  },
+  {
+   "text": "pan",
+   "startMs": 12477,
+   "endMs": 12654
+  },
+  {
+   "text": "de",
+   "startMs": 12654,
+   "endMs": 12831
+  },
+  {
+   "text": "papa",
+   "startMs": 12831,
+   "endMs": 13185
+  },
+  {
+   "text": "con",
+   "startMs": 13185,
+   "endMs": 13362
+  },
+  {
+   "text": "chispas",
+   "startMs": 13362,
+   "endMs": 13717
+  },
+  {
+   "text": "de",
+   "startMs": 13717,
+   "endMs": 13894
+  },
+  {
+   "text": "queso",
+   "startMs": 13894,
+   "endMs": 14248
+  },
+  {
+   "text": "parmesano.",
+   "startMs": 14248,
+   "endMs": 14956
+  },
+  {
+   "text": "Siete",
+   "startMs": 15250,
+   "endMs": 15620
+  },
+  {
+   "text": "cosas",
+   "startMs": 15620,
+   "endMs": 15991
+  },
+  {
+   "text": "en",
+   "startMs": 15991,
+   "endMs": 16176
+  },
+  {
+   "text": "un",
+   "startMs": 16291,
+   "endMs": 16486
+  },
+  {
+   "text": "solo",
+   "startMs": 16486,
+   "endMs": 16876
+  },
+  {
+   "text": "bocado.",
+   "startMs": 16876,
+   "endMs": 17460
+  },
+  {
+   "text": "Hamburguesa",
+   "startMs": 17766,
+   "endMs": 18363
+  },
+  {
+   "text": "Rockera.",
+   "startMs": 18363,
+   "endMs": 18811
+  },
+  {
+   "text": "Encontrala",
+   "startMs": 19078,
+   "endMs": 19579
+  },
+  {
+   "text": "en",
+   "startMs": 19579,
+   "endMs": 19704
+  },
+  {
+   "text": "Motorock",
+   "startMs": 19704,
+   "endMs": 20079
+  },
+  {
+   "text": "Comidas,",
+   "startMs": 20200,
+   "endMs": 20732
+  },
+  {
+   "text": "en",
+   "startMs": 20732,
+   "endMs": 20910
+  },
+  {
+   "text": "Merlo.",
+   "startMs": 20910,
+   "endMs": 21264
+  },
+  {
+   "text": "Pedila",
+   "startMs": 21573,
+   "endMs": 22017
+  },
+  {
+   "text": "por",
+   "startMs": 22017,
+   "endMs": 22165
+  },
+  {
+   "text": "WhatsApp.",
+   "startMs": 22165,
+   "endMs": 22462
+  }
+ ]
+}
