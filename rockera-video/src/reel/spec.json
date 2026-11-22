@@ -237,27 +237,27 @@
    "group": "Pops",
    "scene": "Llamado a la acción",
    "cue": 0,
-   "file": "sfx/pop.wav",
+   "file": "sfx/pop_n.mp3",
    "volume": 1.0,
-   "seconds": 0.2,
+   "seconds": 0.48,
    "rate": 1.0
   },
   {
    "group": "Pops",
    "scene": "Llamado a la acción",
    "cue": 1,
-   "file": "sfx/pop.wav",
+   "file": "sfx/pop_n.mp3",
    "volume": 1.0,
-   "seconds": 0.2,
+   "seconds": 0.48,
    "rate": 1.12
   },
   {
    "group": "Pops",
    "scene": "Llamado a la acción",
    "cue": 2,
-   "file": "sfx/pop.wav",
+   "file": "sfx/pop_n.mp3",
    "volume": 1.0,
-   "seconds": 0.2,
+   "seconds": 0.48,
    "rate": 1.26
   }
  ]
