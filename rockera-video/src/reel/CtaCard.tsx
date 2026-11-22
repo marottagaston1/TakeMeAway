@@ -2,13 +2,16 @@ import React from 'react';
 import {AbsoluteFill, Easing, Img, Interactive, interpolate, staticFile, useCurrentFrame} from 'remotion';
 import {anton, barlow} from '../fonts';
 import {KenBurns} from '../KenBurns';
-import {BurgerStack} from './BurgerStack';
 
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 const ease = Easing.bezier(0.16, 1, 0.3, 1);
 
 // Los tres números se encienden en el frame de cada cue (cuando la voz dice "uno", "dos" y "tres").
-const CtaCardInner: React.FC<{readonly photo: string; readonly cues: readonly number[]}> = ({photo, cues}) => {
+const CtaCardInner: React.FC<{
+  readonly photo: string;
+  readonly cues: readonly number[];
+  readonly whatsapp: string;
+}> = ({photo, cues, whatsapp}) => {
   const frame = useCurrentFrame();
   const rise = (start: number) => interpolate(frame, [start, start + 14], ['0px 60px', '0px 0px'], {...clamp, easing: ease});
   const fade = (start: number) => interpolate(frame, [start, start + 8], [0, 1], clamp);
@@ -93,75 +96,44 @@ const CtaCardInner: React.FC<{readonly photo: string; readonly cues: readonly nu
         </Interactive.Div>
       </div>
 
-      <div
-        style={{
-          position: 'absolute',
-          left: 0,
-          right: 0,
-          top: 1275,
-          display: 'flex',
-          justifyContent: 'center',
-          gap: 22,
-        }}
-      >
-        {cues.map((c, i) => {
-          const lit = frame >= c;
-          return (
-            <div
-              key={i}
-              style={{
-                width: 300,
-                height: 270,
-                borderRadius: 28,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'flex-end',
-                paddingBottom: 18,
-                boxSizing: 'border-box',
-                backgroundColor: 'rgba(0,0,0,0.55)',
-                border: `5px solid ${lit ? '#ffb300' : 'rgba(255,255,255,0.18)'}`,
-                scale: lit ? interpolate(frame, [c, c + 8], [0.88, 1], {...clamp, easing: ease}) : 0.96,
-                opacity: fade(20 + i * 4),
-              }}
-            >
-              <div style={{opacity: lit ? 1 : 0.35, filter: lit ? undefined : 'grayscale(1)', marginBottom: 6}}>
-                <BurgerStack patties={i + 1} />
-              </div>
-              <div
-                style={{
-                  fontFamily: barlow,
-                  fontWeight: 700,
-                  fontSize: 44,
-                  letterSpacing: 2,
-                  textTransform: 'uppercase',
-                  color: lit ? '#ffb300' : 'rgba(245,236,217,0.55)',
-                }}
-              >
-                {i + 1} {i === 0 ? 'Medallón' : 'Medallones'}
-              </div>
-            </div>
-          );
-        })}
+      <div style={{position: 'absolute', left: 0, right: 0, top: 1320, display: 'flex', justifyContent: 'center'}}>
+        <Interactive.Div
+          name="Pedila por WhatsApp"
+          style={{
+            fontFamily: barlow,
+            fontWeight: 700,
+            fontSize: 56,
+            letterSpacing: 4,
+            textTransform: 'uppercase',
+            color: '#0b0b0b',
+            backgroundColor: '#25D366',
+            padding: '10px 44px',
+            borderRadius: 60,
+            opacity: interpolate(frame, [cues[0] ?? 40, (cues[0] ?? 40) + 6], [0, 1], clamp),
+            scale: interpolate(frame, [cues[0] ?? 40, (cues[0] ?? 40) + 10], [0.6, 1], {...clamp, easing: ease}),
+          }}
+        >
+          Pedila por WhatsApp
+        </Interactive.Div>
       </div>
       <Interactive.Div
-        name="De carne"
+        name="Número de WhatsApp"
         style={{
           position: 'absolute',
           left: 0,
           right: 0,
-          top: 1570,
+          top: 1440,
           textAlign: 'center',
-          fontFamily: barlow,
-          fontWeight: 700,
-          fontSize: 50,
-          letterSpacing: 8,
+          fontFamily: anton,
+          fontSize: 130,
+          letterSpacing: 4,
           color: '#f5ecd9',
-          textTransform: 'uppercase',
-          opacity: fade(32),
+          textShadow: '0 6px 0 #000',
+          opacity: interpolate(frame, [(cues[0] ?? 40) + 4, (cues[0] ?? 40) + 12], [0, 1], clamp),
+          translate: interpolate(frame, [(cues[0] ?? 40) + 4, (cues[0] ?? 40) + 16], ['0px 40px', '0px 0px'], {...clamp, easing: ease}),
         }}
       >
-        de carne
+        {whatsapp}
       </Interactive.Div>
     </>
   );

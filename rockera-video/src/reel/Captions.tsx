@@ -76,7 +76,7 @@ export const Captions: React.FC<{readonly captions: readonly Caption[]; readonly
               borderRadius: 16,
               fontFamily: barlow,
               fontWeight: 700,
-              fontSize: 88,
+              fontSize: 76,
               lineHeight: 1.18,
               letterSpacing: 1,
               textTransform: 'uppercase',

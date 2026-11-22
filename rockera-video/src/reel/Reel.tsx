@@ -1,5 +1,5 @@
 import React from 'react';
-import {Audio} from '@remotion/media';
+import {Audio, Video} from '@remotion/media';
 import type {Caption} from '@remotion/captions';
 import {AbsoluteFill, Img, Sequence, staticFile, Track, useVideoConfig} from 'remotion';
 import {Ingredient} from '../Ingredient';
@@ -7,10 +7,32 @@ import {KenBurns} from '../KenBurns';
 import {Captions} from './Captions';
 import {CtaCard} from './CtaCard';
 import {EndCard} from './EndCard';
+import {HookCard} from './HookCard';
 import spec from './spec.json';
 import timing from './timing.json';
 
-type Scene = (typeof spec.scenes)[number];
+type Scene = {
+  readonly name: string;
+  readonly anchor: string;
+  readonly kind: string;
+  readonly photo?: string;
+  readonly video?: string;
+  readonly trimStartSec?: number;
+  readonly fx?: number;
+  readonly fy?: number;
+  readonly zoom?: number;
+  readonly zoomFrom?: number;
+  readonly zoomTo?: number;
+  readonly brightness?: number;
+  readonly number?: string;
+  readonly line1?: string;
+  readonly line2?: string;
+  readonly size?: number;
+  readonly cues?: readonly string[];
+  readonly whatsapp?: string;
+};
+
+const scenes: Scene[] = spec.scenes;
 
 // Cada escena arranca en la palabra "ancla" de la narración (con un adelanto de 3 frames),
 // así los cortes caen sobre la voz y nada se desfasa.
@@ -30,7 +52,7 @@ const frameOf = (idx: number, fps: number) => Math.round((captions[idx].startMs 
 const buildPlan = (fps: number): {start: number; cues: number[]}[] => {
   const plan: {start: number; cues: number[]}[] = [];
   let from = 0;
-  for (const s of spec.scenes) {
+  for (const s of scenes) {
     const idx = captions.findIndex((c, i) => i >= from && c.text === s.anchor);
     if (idx < 0) throw new Error(`No encuentro la palabra ancla "${s.anchor}" en la narración`);
     const start = Math.max(0, frameOf(idx, fps) - LEAD_FRAMES);
@@ -53,7 +75,7 @@ const renderScene = (s: Scene, cues: number[]) => {
   if (s.kind === 'ingredient') {
     return (
       <Ingredient
-        photo={s.photo}
+        photo={s.photo ?? ''}
         fx={s.fx ?? 0.5}
         fy={s.fy ?? 0.5}
         zoom={s.zoom ?? 1.8}
@@ -65,11 +87,25 @@ const renderScene = (s: Scene, cues: number[]) => {
       />
     );
   }
-  if (s.kind === 'end') return <EndCard photo={s.photo} />;
-  if (s.kind === 'cta') return <CtaCard photo={s.photo} cues={cues} />;
+  if (s.kind === 'end') return <EndCard photo={s.photo ?? ''} />;
+  if (s.kind === 'hook') return <HookCard photo={s.photo ?? ''} cues={cues} />;
+  if (s.kind === 'cta') return <CtaCard photo={s.photo ?? ''} cues={cues} whatsapp={s.whatsapp ?? ''} />;
+  // Clip real (vertical): { "kind": "video", "video": "clips/queso.mp4", "trimStartSec": 0 }
+  if (s.kind === 'video' && s.video) {
+    return (
+      <Video
+        name="Clip real"
+        src={staticFile(s.video)}
+        trimBefore={Math.round((s.trimStartSec ?? 0) * 30)}
+        objectFit="cover"
+        muted
+        style={{width: '100%', height: '100%'}}
+      />
+    );
+  }
   return (
     <KenBurns
-      src={s.photo}
+      src={s.photo ?? ''}
       fx={s.fx ?? 0.5}
       fy={s.fy ?? 0.5}
       zoomFrom={s.zoomFrom ?? 1.05}
@@ -84,20 +120,20 @@ export const Reel: React.FC = () => {
   const plan = buildPlan(fps);
   // Efectos de sonido: cada uno se ancla al inicio de una escena (o a uno de sus cues).
   const sfxItems = spec.sfx.map((it) => {
-    const si = spec.scenes.findIndex((sc) => sc.name === it.scene);
+    const si = scenes.findIndex((sc) => sc.name === it.scene);
     if (si < 0) throw new Error(`No encuentro la escena "${it.scene}" para un efecto de sonido`);
     const at = plan[si].start + (it.cue != null ? plan[si].cues[it.cue] : (it.offset ?? 0));
     return {...it, from: Math.max(0, at), frames: Math.round(it.seconds * fps)};
   });
   const sfxGroups = Array.from(new Set(sfxItems.map((it) => it.group)));
-  const ctaIdx = spec.scenes.findIndex((sc) => sc.kind === 'cta');
+  const ctaIdx = scenes.findIndex((sc) => sc.kind === 'cta');
   const ctaStart = ctaIdx >= 0 ? plan[ctaIdx].start : durationInFrames;
 
   return (
     <>
       <AbsoluteFill style={{backgroundColor: '#0b0b0b'}} />
       <Audio name="Narración" src={staticFile(spec.voice)} />
-      {spec.scenes.map((s, i) => {
+      {scenes.map((s, i) => {
         const start = plan[i].start;
         const end = i + 1 < plan.length ? plan[i + 1].start : durationInFrames;
         return (
