@@ -1,7 +1,8 @@
 import React from 'react';
-import {AbsoluteFill, Easing, Interactive, interpolate, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Easing, Img, Interactive, interpolate, staticFile, useCurrentFrame} from 'remotion';
 import {anton, barlow} from '../fonts';
 import {KenBurns} from '../KenBurns';
+import {BurgerStack} from './BurgerStack';
 
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 const ease = Easing.bezier(0.16, 1, 0.3, 1);
@@ -9,7 +10,6 @@ const ease = Easing.bezier(0.16, 1, 0.3, 1);
 // Los tres números se encienden en el frame de cada cue (cuando la voz dice "uno", "dos" y "tres").
 const CtaCardInner: React.FC<{readonly photo: string; readonly cues: readonly number[]}> = ({photo, cues}) => {
   const frame = useCurrentFrame();
-  const labels = ['Medallón', 'Medallones', 'Medallones'];
   const rise = (start: number) => interpolate(frame, [start, start + 14], ['0px 60px', '0px 0px'], {...clamp, easing: ease});
   const fade = (start: number) => interpolate(frame, [start, start + 8], [0, 1], clamp);
 
@@ -26,11 +26,11 @@ const CtaCardInner: React.FC<{readonly photo: string; readonly cues: readonly nu
           position: 'absolute',
           left: 0,
           right: 0,
-          top: 590,
+          top: 520,
           textAlign: 'center',
           fontFamily: barlow,
           fontWeight: 700,
-          fontSize: 60,
+          fontSize: 56,
           letterSpacing: 10,
           color: '#ffb300',
           textTransform: 'uppercase',
@@ -40,36 +40,28 @@ const CtaCardInner: React.FC<{readonly photo: string; readonly cues: readonly nu
       >
         Encontrala en
       </Interactive.Div>
-      <Interactive.Div
-        name="Local"
+      <Img
+        name="Logo Motorock"
+        src={staticFile('brand/motorock-logo.png')}
         style={{
           position: 'absolute',
-          left: 0,
-          right: 0,
-          top: 660,
-          textAlign: 'center',
-          fontFamily: anton,
-          fontSize: 215,
-          lineHeight: 1.05,
-          color: '#e10600',
-          textTransform: 'uppercase',
-          textShadow: '0 0 70px rgba(225,6,0,0.6), 0 8px 0 #000',
+          left: 280,
+          top: 600,
+          width: 520,
           opacity: fade(4),
-          scale: interpolate(frame, [4, 16], [1.5, 1], {...clamp, easing: ease, output: 'perceptual-scale'}),
+          scale: interpolate(frame, [4, 16], [1.4, 1], {...clamp, easing: ease, output: 'perceptual-scale'}),
         }}
-      >
-        Motorock
-      </Interactive.Div>
+      />
       <Interactive.Div
         name="Local (línea 2)"
         style={{
           position: 'absolute',
           left: 0,
           right: 0,
-          top: 900,
+          top: 1020,
           textAlign: 'center',
           fontFamily: anton,
-          fontSize: 120,
+          fontSize: 100,
           lineHeight: 1,
           letterSpacing: 6,
           color: '#f5ecd9',
@@ -80,13 +72,13 @@ const CtaCardInner: React.FC<{readonly photo: string; readonly cues: readonly nu
       >
         Comidas
       </Interactive.Div>
-      <div style={{position: 'absolute', left: 0, right: 0, top: 1050, display: 'flex', justifyContent: 'center'}}>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 1135, display: 'flex', justifyContent: 'center'}}>
         <Interactive.Div
           name="Ciudad"
           style={{
             fontFamily: barlow,
             fontWeight: 700,
-            fontSize: 70,
+            fontSize: 62,
             letterSpacing: 6,
             textTransform: 'uppercase',
             color: '#0b0b0b',
@@ -106,10 +98,10 @@ const CtaCardInner: React.FC<{readonly photo: string; readonly cues: readonly nu
           position: 'absolute',
           left: 0,
           right: 0,
-          top: 1230,
+          top: 1275,
           display: 'flex',
           justifyContent: 'center',
-          gap: 24,
+          gap: 22,
         }}
       >
         {cues.map((c, i) => {
@@ -118,30 +110,35 @@ const CtaCardInner: React.FC<{readonly photo: string; readonly cues: readonly nu
             <div
               key={i}
               style={{
-                width: 290,
-                height: 280,
+                width: 300,
+                height: 270,
                 borderRadius: 28,
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: lit ? '#ffb300' : 'rgba(255,255,255,0.12)',
-                color: lit ? '#0b0b0b' : 'rgba(245,236,217,0.6)',
-                scale: lit ? interpolate(frame, [c, c + 8], [0.85, 1], {...clamp, easing: ease}) : 0.95,
+                justifyContent: 'flex-end',
+                paddingBottom: 18,
+                boxSizing: 'border-box',
+                backgroundColor: 'rgba(0,0,0,0.55)',
+                border: `5px solid ${lit ? '#ffb300' : 'rgba(255,255,255,0.18)'}`,
+                scale: lit ? interpolate(frame, [c, c + 8], [0.88, 1], {...clamp, easing: ease}) : 0.96,
                 opacity: fade(20 + i * 4),
               }}
             >
-              <div style={{fontFamily: anton, fontSize: 170, lineHeight: 1}}>{i + 1}</div>
+              <div style={{opacity: lit ? 1 : 0.35, filter: lit ? undefined : 'grayscale(1)', marginBottom: 6}}>
+                <BurgerStack patties={i + 1} />
+              </div>
               <div
                 style={{
                   fontFamily: barlow,
                   fontWeight: 700,
-                  fontSize: 40,
+                  fontSize: 44,
                   letterSpacing: 2,
                   textTransform: 'uppercase',
+                  color: lit ? '#ffb300' : 'rgba(245,236,217,0.55)',
                 }}
               >
-                {labels[i]}
+                {i + 1} {i === 0 ? 'Medallón' : 'Medallones'}
               </div>
             </div>
           );
@@ -153,11 +150,11 @@ const CtaCardInner: React.FC<{readonly photo: string; readonly cues: readonly nu
           position: 'absolute',
           left: 0,
           right: 0,
-          top: 1540,
+          top: 1570,
           textAlign: 'center',
           fontFamily: barlow,
           fontWeight: 700,
-          fontSize: 52,
+          fontSize: 50,
           letterSpacing: 8,
           color: '#f5ecd9',
           textTransform: 'uppercase',

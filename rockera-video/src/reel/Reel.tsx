@@ -1,7 +1,7 @@
 import React from 'react';
 import {Audio} from '@remotion/media';
 import type {Caption} from '@remotion/captions';
-import {AbsoluteFill, Sequence, staticFile, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Img, Sequence, staticFile, useVideoConfig} from 'remotion';
 import {Ingredient} from '../Ingredient';
 import {KenBurns} from '../KenBurns';
 import {Captions} from './Captions';
@@ -82,6 +82,8 @@ const renderScene = (s: Scene, cues: number[]) => {
 export const Reel: React.FC = () => {
   const {fps, durationInFrames} = useVideoConfig();
   const plan = buildPlan(fps);
+  const ctaIdx = spec.scenes.findIndex((sc) => sc.kind === 'cta');
+  const ctaStart = ctaIdx >= 0 ? plan[ctaIdx].start : durationInFrames;
 
   return (
     <>
@@ -101,6 +103,13 @@ export const Reel: React.FC = () => {
           background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 34%)',
         }}
       />
+      <Sequence name="Marca de agua" from={0} durationInFrames={Math.max(1, ctaStart)} layout="none">
+        <Img
+          name="Logo Motorock (marca de agua)"
+          src={staticFile('brand/motorock-logo.png')}
+          style={{position: 'absolute', right: 60, top: 105, width: 150, opacity: 0.92}}
+        />
+      </Sequence>
       <Captions captions={captions} top={290} />
     </>
   );
