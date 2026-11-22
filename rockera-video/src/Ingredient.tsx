@@ -125,6 +125,7 @@ const IngredientInner: React.FC<Props> = ({
           </div>
         ) : null}
 
+        {tagline ? (
         <Interactive.Div
           name="Descripción"
           style={{
@@ -149,6 +150,7 @@ const IngredientInner: React.FC<Props> = ({
         >
           {tagline}
         </Interactive.Div>
+        ) : null}
       </div>
 
       <AbsoluteFill
