@@ -1,301 +1,316 @@
 {
- "durationMs": 26671,
- "source": "local-silence-alignment",
+ "durationMs": 27951,
+ "source": "elevenlabs-scribe",
  "words": [
   {
    "text": "¿Cuántas",
    "startMs": 0,
-   "endMs": 373
+   "endMs": 400
   },
   {
    "text": "cosas",
-   "startMs": 478,
-   "endMs": 840
+   "startMs": 480,
+   "endMs": 800
   },
   {
    "text": "entran",
-   "startMs": 840,
-   "endMs": 1202
+   "startMs": 880,
+   "endMs": 1200
   },
   {
    "text": "en",
-   "startMs": 1202,
-   "endMs": 1383
+   "startMs": 1280,
+   "endMs": 1360
   },
   {
    "text": "una",
-   "startMs": 1492,
-   "endMs": 1777
+   "startMs": 1480,
+   "endMs": 1600
   },
   {
    "text": "sola",
-   "startMs": 1777,
-   "endMs": 2061
+   "startMs": 1680,
+   "endMs": 1840
   },
   {
    "text": "hamburguesa?",
-   "startMs": 2061,
-   "endMs": 2630
-  },
-  {
-   "text": "Parece",
-   "startMs": 2973,
-   "endMs": 3514
-  },
-  {
-   "text": "una",
-   "startMs": 3514,
-   "endMs": 3875
-  },
-  {
-   "text": "sola,",
-   "startMs": 4147,
-   "endMs": 4515
-  },
-  {
-   "text": "pero",
-   "startMs": 4515,
-   "endMs": 4884
-  },
-  {
-   "text": "no",
-   "startMs": 4884,
-   "endMs": 5069
-  },
-  {
-   "text": "lo",
-   "startMs": 5295,
-   "endMs": 5456
-  },
-  {
-   "text": "es.",
-   "startMs": 5456,
-   "endMs": 5616
+   "startMs": 1947,
+   "endMs": 2560
   },
   {
    "text": "Contalas",
-   "startMs": 5616,
-   "endMs": 6097
+   "startMs": 2800,
+   "endMs": 3200
   },
   {
    "text": "conmigo.",
-   "startMs": 6535,
-   "endMs": 6839
+   "startMs": 3280,
+   "endMs": 3760
   },
   {
    "text": "Uno:",
-   "startMs": 7159,
-   "endMs": 7524
+   "startMs": 4160,
+   "endMs": 4720
   },
   {
    "text": "medallón",
-   "startMs": 7524,
-   "endMs": 8072
+   "startMs": 4800,
+   "endMs": 5200
   },
   {
    "text": "de",
-   "startMs": 8433,
-   "endMs": 8583
+   "startMs": 5240,
+   "endMs": 5280
   },
   {
    "text": "carne.",
-   "startMs": 8583,
-   "endMs": 8884
+   "startMs": 5360,
+   "endMs": 6000
   },
   {
    "text": "Dos:",
-   "startMs": 9165,
-   "endMs": 9544
+   "startMs": 6080,
+   "endMs": 6640
   },
   {
    "text": "cheddar.",
-   "startMs": 9939,
-   "endMs": 10223
+   "startMs": 6760,
+   "endMs": 7360
   },
   {
    "text": "Tres:",
-   "startMs": 10223,
-   "endMs": 10365
+   "startMs": 7400,
+   "endMs": 8000
   },
   {
    "text": "panceta.",
-   "startMs": 10604,
-   "endMs": 11186
+   "startMs": 8120,
+   "endMs": 8880
   },
   {
    "text": "Cuatro:",
-   "startMs": 11540,
-   "endMs": 11957
+   "startMs": 8960,
+   "endMs": 9600
   },
   {
    "text": "cebolla",
-   "startMs": 12174,
-   "endMs": 12587
+   "startMs": 9680,
+   "endMs": 10000
   },
   {
    "text": "caramelizada.",
-   "startMs": 12587,
-   "endMs": 13412
+   "startMs": 10080,
+   "endMs": 11120
   },
   {
    "text": "Cinco:",
-   "startMs": 13702,
-   "endMs": 14249
+   "startMs": 11200,
+   "endMs": 11840
   },
   {
    "text": "huevo",
-   "startMs": 14490,
-   "endMs": 14866
+   "startMs": 11880,
+   "endMs": 12160
   },
   {
    "text": "frito.",
-   "startMs": 14866,
-   "endMs": 15242
+   "startMs": 12240,
+   "endMs": 12880
   },
   {
    "text": "Seis:",
-   "startMs": 15537,
-   "endMs": 15722
+   "startMs": 12960,
+   "endMs": 13600
   },
   {
    "text": "salsa",
-   "startMs": 15722,
-   "endMs": 16092
+   "startMs": 13640,
+   "endMs": 13920
   },
   {
    "text": "especial.",
-   "startMs": 16247,
-   "endMs": 16731
+   "startMs": 14000,
+   "endMs": 14720
   },
   {
    "text": "Y",
-   "startMs": 16731,
-   "endMs": 16892
+   "startMs": 14760,
+   "endMs": 14800
   },
   {
    "text": "siete:",
-   "startMs": 16892,
-   "endMs": 17215
+   "startMs": 14880,
+   "endMs": 15520
   },
   {
    "text": "un",
-   "startMs": 17496,
-   "endMs": 17700
+   "startMs": 15600,
+   "endMs": 15680
   },
   {
    "text": "pan",
-   "startMs": 17700,
-   "endMs": 17904
+   "startMs": 15760,
+   "endMs": 15920
   },
   {
    "text": "de",
-   "startMs": 17904,
-   "endMs": 18109
+   "startMs": 15960,
+   "endMs": 16000
   },
   {
    "text": "papa",
-   "startMs": 18366,
-   "endMs": 18751
+   "startMs": 16080,
+   "endMs": 16240
   },
   {
    "text": "con",
-   "startMs": 18751,
-   "endMs": 18944
+   "startMs": 16320,
+   "endMs": 16480
   },
   {
    "text": "chispas",
-   "startMs": 18944,
-   "endMs": 19329
+   "startMs": 16560,
+   "endMs": 16880
   },
   {
    "text": "de",
-   "startMs": 19329,
-   "endMs": 19522
+   "startMs": 16920,
+   "endMs": 16960
   },
   {
    "text": "queso",
-   "startMs": 19522,
-   "endMs": 19907
+   "startMs": 17040,
+   "endMs": 17240
   },
   {
    "text": "parmesano.",
-   "startMs": 19907,
-   "endMs": 20678
+   "startMs": 17280,
+   "endMs": 18240
   },
   {
    "text": "Siete",
-   "startMs": 20982,
-   "endMs": 21308
+   "startMs": 18280,
+   "endMs": 18560
   },
   {
    "text": "cosas,",
-   "startMs": 21308,
-   "endMs": 21633
+   "startMs": 18640,
+   "endMs": 19360
   },
   {
    "text": "todo",
-   "startMs": 21633,
-   "endMs": 21959
+   "startMs": 19520,
+   "endMs": 19680
   },
   {
    "text": "en",
-   "startMs": 22186,
-   "endMs": 22464
+   "startMs": 19840,
+   "endMs": 20000
   },
   {
    "text": "un",
-   "startMs": 22464,
-   "endMs": 22741
+   "startMs": 20080,
+   "endMs": 20160
   },
   {
    "text": "solo",
-   "startMs": 22859,
-   "endMs": 23187
+   "startMs": 20240,
+   "endMs": 20480
   },
   {
    "text": "bocado.",
-   "startMs": 23187,
-   "endMs": 23680
+   "startMs": 20520,
+   "endMs": 21280
   },
   {
    "text": "La",
-   "startMs": 23680,
-   "endMs": 23844
+   "startMs": 21320,
+   "endMs": 21360
   },
   {
    "text": "Hamburguesa",
-   "startMs": 24127,
-   "endMs": 24749
+   "startMs": 21467,
+   "endMs": 21960
   },
   {
    "text": "Rockera.",
-   "startMs": 24749,
-   "endMs": 25215
+   "startMs": 22000,
+   "endMs": 22720
   },
   {
-   "text": "¿Te",
-   "startMs": 25215,
-   "endMs": 25371
+   "text": "Encontrala",
+   "startMs": 22800,
+   "endMs": 23200
   },
   {
-   "text": "la",
-   "startMs": 25676,
-   "endMs": 25835
+   "text": "en",
+   "startMs": 23280,
+   "endMs": 23360
   },
   {
-   "text": "vas",
-   "startMs": 25835,
-   "endMs": 25993
+   "text": "Motorock",
+   "startMs": 23480,
+   "endMs": 23760
   },
   {
-   "text": "a",
-   "startMs": 25993,
-   "endMs": 26152
+   "text": "Comidas,",
+   "startMs": 23840,
+   "endMs": 24400
   },
   {
-   "text": "perder?",
-   "startMs": 26152,
-   "endMs": 26469
+   "text": "en",
+   "startMs": 24440,
+   "endMs": 24480
+  },
+  {
+   "text": "Merlo,",
+   "startMs": 24560,
+   "endMs": 25040
+  },
+  {
+   "text": "con",
+   "startMs": 25160,
+   "endMs": 25280
+  },
+  {
+   "text": "uno,",
+   "startMs": 25360,
+   "endMs": 25760
+  },
+  {
+   "text": "dos",
+   "startMs": 25840,
+   "endMs": 26080
+  },
+  {
+   "text": "o",
+   "startMs": 26160,
+   "endMs": 26240
+  },
+  {
+   "text": "hasta",
+   "startMs": 26280,
+   "endMs": 26560
+  },
+  {
+   "text": "tres",
+   "startMs": 26640,
+   "endMs": 26800
+  },
+  {
+   "text": "medallones",
+   "startMs": 26880,
+   "endMs": 27280
+  },
+  {
+   "text": "de",
+   "startMs": 27320,
+   "endMs": 27360
+  },
+  {
+   "text": "carne.",
+   "startMs": 27440,
+   "endMs": 28000
   }
  ]
 }

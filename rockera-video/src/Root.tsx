@@ -23,11 +23,11 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
       />
-      {/* 26,67 s de narración + 3 s de cierre = 891 frames */}
+      {/* 27,95 s de narración + 2 s de cola = 899 frames */}
       <Composition
         id="PlatoEspecial"
         component={Reel}
-        durationInFrames={891}
+        durationInFrames={899}
         fps={30}
         width={1080}
         height={1920}

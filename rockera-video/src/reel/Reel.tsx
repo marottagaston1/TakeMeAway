@@ -5,6 +5,7 @@ import {AbsoluteFill, Sequence, staticFile, useVideoConfig} from 'remotion';
 import {Ingredient} from '../Ingredient';
 import {KenBurns} from '../KenBurns';
 import {Captions} from './Captions';
+import {CtaCard} from './CtaCard';
 import {EndCard} from './EndCard';
 import spec from './spec.json';
 import timing from './timing.json';
@@ -23,20 +24,32 @@ const captions: Caption[] = timing.words.map((w) => ({
   confidence: null,
 }));
 
-const anchorFrames = (fps: number): number[] => {
-  const out: number[] = [];
+const frameOf = (idx: number, fps: number) => Math.round((captions[idx].startMs / 1000) * fps);
+
+// Devuelve, por escena, el frame de inicio y el frame (relativo a la escena) de cada cue.
+const buildPlan = (fps: number): {start: number; cues: number[]}[] => {
+  const plan: {start: number; cues: number[]}[] = [];
   let from = 0;
   for (const s of spec.scenes) {
     const idx = captions.findIndex((c, i) => i >= from && c.text === s.anchor);
     if (idx < 0) throw new Error(`No encuentro la palabra ancla "${s.anchor}" en la narración`);
-    out.push(Math.max(0, Math.round((captions[idx].startMs / 1000) * fps) - LEAD_FRAMES));
+    const start = Math.max(0, frameOf(idx, fps) - LEAD_FRAMES);
+    const cues: number[] = [];
+    let cf = idx;
+    for (const token of s.cues ?? []) {
+      const ci = captions.findIndex((c, i) => i >= cf && c.text === token);
+      if (ci < 0) throw new Error(`No encuentro la palabra "${token}" para el cue de "${s.name}"`);
+      cues.push(Math.max(0, frameOf(ci, fps) - start - 2));
+      cf = ci + 1;
+    }
+    plan.push({start, cues});
     from = idx + 1;
   }
-  out[0] = 0;
-  return out;
+  plan[0].start = 0;
+  return plan;
 };
 
-const renderScene = (s: Scene) => {
+const renderScene = (s: Scene, cues: number[]) => {
   if (s.kind === 'ingredient') {
     return (
       <Ingredient
@@ -53,6 +66,7 @@ const renderScene = (s: Scene) => {
     );
   }
   if (s.kind === 'end') return <EndCard photo={s.photo} />;
+  if (s.kind === 'cta') return <CtaCard photo={s.photo} cues={cues} />;
   return (
     <KenBurns
       src={s.photo}
@@ -67,17 +81,18 @@ const renderScene = (s: Scene) => {
 
 export const Reel: React.FC = () => {
   const {fps, durationInFrames} = useVideoConfig();
-  const starts = anchorFrames(fps);
+  const plan = buildPlan(fps);
 
   return (
     <>
       <AbsoluteFill style={{backgroundColor: '#0b0b0b'}} />
       <Audio name="Narración" src={staticFile(spec.voice)} />
       {spec.scenes.map((s, i) => {
-        const end = i + 1 < starts.length ? starts[i + 1] : durationInFrames;
+        const start = plan[i].start;
+        const end = i + 1 < plan.length ? plan[i + 1].start : durationInFrames;
         return (
-          <Sequence key={s.name} name={s.name} from={starts[i]} durationInFrames={end - starts[i]}>
-            {renderScene(s)}
+          <Sequence key={s.name} name={s.name} from={start} durationInFrames={end - start}>
+            {renderScene(s, plan[i].cues)}
           </Sequence>
         );
       })}
