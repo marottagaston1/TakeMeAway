@@ -1,0 +1,25 @@
+{
+  "voice": "voice/motorock_v2.mp3",
+  "tailSeconds": 2,
+  "whatsapp": "11 6564-8247",
+  "sfx": [
+    {"group": "Golpe inicial", "token": "Una,", "offset": 0, "file": "sfx/boom_n.mp3", "volume": 0.3, "seconds": 1.6},
+    {"group": "Pops", "token": "Una,", "offset": 0, "file": "sfx/pop_n.mp3", "volume": 1.0, "seconds": 0.48, "rate": 1.0},
+    {"group": "Pops 2", "token": "dos", "offset": 0, "file": "sfx/pop_n.mp3", "volume": 1.0, "seconds": 0.48, "rate": 1.12},
+    {"group": "Pops 3", "token": "tres", "offset": 0, "file": "sfx/pop_n.mp3", "volume": 1.0, "seconds": 0.48, "rate": 1.26},
+    {"group": "Cortes", "token": "Pero", "offset": -2, "file": "sfx/whoosh_n.wav", "volume": 1.0, "seconds": 0.75},
+    {"group": "Cortes 2", "token": "mirá", "offset": 0, "file": "sfx/whoosh_n.wav", "volume": 0.8, "seconds": 0.75},
+    {"group": "Ingrediente 1", "token": "Medallón", "offset": 0, "file": "sfx/pop_n.mp3", "volume": 0.8, "seconds": 0.48, "rate": 0.9},
+    {"group": "Ingrediente 2", "token": "Cheddar.", "offset": 0, "file": "sfx/pop_n.mp3", "volume": 0.8, "seconds": 0.48, "rate": 0.95},
+    {"group": "Ingrediente 3", "token": "Panceta.", "offset": 0, "file": "sfx/pop_n.mp3", "volume": 0.8, "seconds": 0.48, "rate": 1.0},
+    {"group": "Ingrediente 4", "token": "Cebolla", "offset": 0, "file": "sfx/pop_n.mp3", "volume": 0.8, "seconds": 0.48, "rate": 1.05},
+    {"group": "Ingrediente 5", "token": "Huevo", "offset": 0, "file": "sfx/pop_n.mp3", "volume": 0.8, "seconds": 0.48, "rate": 1.1},
+    {"group": "Ingrediente 6", "token": "Salsa", "offset": 0, "file": "sfx/pop_n.mp3", "volume": 0.8, "seconds": 0.48, "rate": 1.15},
+    {"group": "Ingrediente 7", "token": "Y", "offset": 0, "file": "sfx/pop_n.mp3", "volume": 0.8, "seconds": 0.48, "rate": 1.2},
+    {"group": "Rearmado", "token": "Siete", "offset": 8, "file": "sfx/boom_n.mp3", "volume": 0.4, "seconds": 1.6},
+    {"group": "Impacto", "token": "Hamburguesa", "offset": 8, "file": "sfx/boom_n.mp3", "volume": 0.4, "seconds": 2.2},
+    {"group": "Guitarra", "token": "Hamburguesa", "offset": 8, "file": "sfx/guitar_n.mp3", "volume": 0.3, "seconds": 1.4},
+    {"group": "Moto", "token": "Encontrala", "offset": 0, "file": "sfx/rev_n.mp3", "volume": 0.6, "seconds": 1.8},
+    {"group": "Pop WhatsApp", "token": "Pedila", "offset": 0, "file": "sfx/pop_n.mp3", "volume": 1.0, "seconds": 0.48, "rate": 1.5}
+  ]
+}
